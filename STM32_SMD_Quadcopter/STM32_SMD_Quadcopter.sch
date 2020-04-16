@@ -312,17 +312,6 @@ Status
 Wire Wire Line
 	900  3000 950  3000
 $Comp
-L STM32_SMD_Quadcopter-rescue:Micro_SD_Card-Connector J3
-U 1 1 5D1D8D5D
-P 5200 5000
-F 0 "J3" H 5150 5717 50  0000 C CNN
-F 1 "Micro_SD_Card" H 5150 5626 50  0000 C CNN
-F 2 "Connector_Card:microSD_HC_Hirose_DM3D-SF" H 6350 5300 50  0001 C CNN
-F 3 "http://katalog.we-online.de/em/datasheet/693072010801.pdf" H 5200 5000 50  0001 C CNN
-	1    5200 5000
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:USB_B_Micro J2
 U 1 1 5D1D8FC7
 P 5800 1700
@@ -1584,7 +1573,7 @@ U 1 1 5DBEC32D
 P 6500 5500
 F 0 "J4" H 6472 5380 50  0000 R CNN
 F 1 "DEBUG" H 6472 5471 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 6500 5500 50  0001 C CNN
+F 2 "Connector_Harwin:Harwin_M20-89004xx_1x04_P2.54mm_Horizontal" H 6500 5500 50  0001 C CNN
 F 3 "~" H 6500 5500 50  0001 C CNN
 	1    6500 5500
 	1    0    0    1   
@@ -1992,4 +1981,35 @@ Possible alternate: NCP161\n
 Wire Wire Line
 	9750 5450 9700 5450
 NoConn ~ 8300 5150
+$Comp
+L Connector:Micro_SD_Card_Det J3
+U 1 1 5EAFBA60
+P 5200 5100
+F 0 "J3" H 5150 5917 50  0000 C CNN
+F 1 "Micro_SD_Card_Det" H 5150 5826 50  0000 C CNN
+F 2 "Connector_Card:microSD_HC_Hirose_DM3D-SF" H 7250 5800 50  0001 C CNN
+F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 5200 5200 50  0001 C CNN
+	1    5200 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EB10C43
+P 4200 5700
+F 0 "#PWR?" H 4200 5450 50  0001 C CNN
+F 1 "GND" H 4205 5527 50  0000 C CNN
+F 2 "" H 4200 5700 50  0001 C CNN
+F 3 "" H 4200 5700 50  0001 C CNN
+	1    4200 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 5700 4200 5600
+Wire Wire Line
+	4200 5600 4300 5600
+Wire Wire Line
+	4300 5500 4200 5500
+Wire Wire Line
+	4200 5500 4200 5600
+Connection ~ 4200 5600
 $EndSCHEMATC
