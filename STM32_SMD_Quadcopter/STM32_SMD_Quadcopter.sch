@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:STM32_SMD_Quadcopter-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -313,12 +312,12 @@ Status
 Wire Wire Line
 	900  3000 950  3000
 $Comp
-L Connector:Micro_SD_Card J3
+L STM32_SMD_Quadcopter-rescue:Micro_SD_Card-Connector J3
 U 1 1 5D1D8D5D
 P 5200 5000
 F 0 "J3" H 5150 5717 50  0000 C CNN
 F 1 "Micro_SD_Card" H 5150 5626 50  0000 C CNN
-F 2 "Connector_Card:microSD_HC_Wuerth_693072010801" H 6350 5300 50  0001 C CNN
+F 2 "Connector_Card:microSD_HC_Hirose_DM3D-SF" H 6350 5300 50  0001 C CNN
 F 3 "http://katalog.we-online.de/em/datasheet/693072010801.pdf" H 5200 5000 50  0001 C CNN
 	1    5200 5000
 	1    0    0    -1  
@@ -329,7 +328,7 @@ U 1 1 5D1D8FC7
 P 5800 1700
 F 0 "J2" H 5570 1598 50  0000 R CNN
 F 1 "USB_B_Micro" H 5570 1689 50  0000 R CNN
-F 2 "Connector_USB:USB_Micro-B_Amphenol_10103594-0001LF_Horizontal" H 5950 1650 50  0001 C CNN
+F 2 "Connector_USB:USB_Micro-B_Molex_47346-0001" H 5950 1650 50  0001 C CNN
 F 3 "~" H 5950 1650 50  0001 C CNN
 	1    5800 1700
 	1    0    0    1   
@@ -1308,11 +1307,11 @@ Wire Wire Line
 Wire Wire Line
 	9700 4350 9750 4350
 Text GLabel 1050 4300 0    50   Input ~ 0
-SPI1_SCK
+SPI2_SCK
 Text GLabel 1050 4200 0    50   Input ~ 0
-SPI1_MISO
+SPI2_MISO
 Text GLabel 1050 4100 0    50   Input ~ 0
-SPI1_MOSI
+SPI2_MOSI
 Wire Wire Line
 	2150 3500 2350 3500
 Wire Wire Line
@@ -1385,11 +1384,11 @@ $EndComp
 Wire Wire Line
 	3100 4500 3100 4700
 Text GLabel 4250 4900 0    50   Input ~ 0
-SPI2_MOSI
+SPI1_MOSI
 Text GLabel 4250 5300 0    50   Input ~ 0
-SPI2_MISO
+SPI1_MISO
 Text GLabel 4250 5100 0    50   Input ~ 0
-SPI2_SCK
+SPI1_SCK
 NoConn ~ 4300 4700
 Text GLabel 4250 4800 0    50   Input ~ 0
 SD_CARD_CS
@@ -1443,11 +1442,11 @@ Wire Wire Line
 	4250 5100 4300 5100
 Wire Wire Line
 	4250 5300 4300 5300
-Text GLabel 8250 4850 0    50   Input ~ 0
+Text GLabel 9750 3650 2    50   Input ~ 0
 SD_CARD_CS
 Wire Wire Line
 	8250 4850 8300 4850
-Text GLabel 9750 3650 2    50   Input ~ 0
+Text GLabel 8250 4850 0    50   Input ~ 0
 MPU9250_CS
 Wire Wire Line
 	9750 3650 9700 3650
@@ -1456,7 +1455,7 @@ USART1_TX
 Text GLabel 8100 1400 2    50   Input ~ 0
 USART1_RX
 $Comp
-L Interface_USB:FT230XQ U3
+L STM32_SMD_Quadcopter-rescue:FT230XQ-Interface_USB U3
 U 1 1 5D7FF237
 P 7350 1700
 F 0 "U3" H 7350 1700 50  0000 C CNN
@@ -1710,7 +1709,6 @@ NoConn ~ 9700 4750
 NoConn ~ 9700 5050
 NoConn ~ 9700 5150
 NoConn ~ 9700 5350
-NoConn ~ 9700 5450
 NoConn ~ 9700 6050
 NoConn ~ 9700 6150
 NoConn ~ 9700 6250
@@ -1922,10 +1920,8 @@ F 3 "~" H 4600 3100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4450 3100 4350 3100
-Text GLabel 8250 5150 0    50   Input ~ 0
+Text GLabel 9750 5450 2    50   Input ~ 0
 DSMX
-Wire Wire Line
-	8250 5150 8300 5150
 Text GLabel 4350 3100 0    50   Input ~ 0
 DSMX
 Text GLabel 9750 4450 2    50   Input ~ 0
@@ -1993,4 +1989,7 @@ Text Notes 1700 6350 0    50   ~ 0
 Other possible FETS:\n\nDMN2041L
 Text Notes 1650 2150 0    50   ~ 0
 Possible alternate: NCP161\n
+Wire Wire Line
+	9750 5450 9700 5450
+NoConn ~ 8300 5150
 $EndSCHEMATC
